@@ -6,7 +6,7 @@ pipeline {
               checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/santhusantosh/Sample.git']]])
             }
         }
-        stage("build code")
+        stage("build code"){
             steps{
                 build 'sample'
               sh "mvn clean package"
